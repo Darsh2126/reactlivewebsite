@@ -1,0 +1,29 @@
+@import '../../scss/index.scss';
+
+.time{
+    box-sizing: border-box;
+    background-color: rgb(212, 210, 206);
+    border: 1px solid $black;
+    color:$black;
+    height:100vh;
+    width: 100vw;
+    font-size: $font-size-big;
+    font-weight: $font-weight-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .display{
+        margin-bottom: 10px;
+    }
+
+    .time_btn{
+        width: 100px;
+        height:50px;
+        color:$white;
+        background-color: $purple;
+        border: solid $white  2px;
+        border-radius: 30px;
+    }
+}

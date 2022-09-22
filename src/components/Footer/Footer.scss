@@ -1,0 +1,19 @@
+@import '../../scss/index.scss';
+
+.main-footer{
+
+    height:50px;
+    width: 100vw;
+    background-color: $black;
+    color:$white;
+    // position:relative;
+    // bottom:0;
+    .footer{
+        font-size: $font-size-big;
+        font-weight: $font-weight-big;
+        text-align: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+    }
+}

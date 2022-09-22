@@ -1,0 +1,116 @@
+@import '../../scss/index.scss ';
+
+.main-form-div{
+
+    
+    background-color: $black;
+    height:100vh;
+    // margin:10px;
+    padding:15px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+    .forms{
+        
+        .form-design{
+            width: 50vw;
+            height: 70vh;
+            border:1px solid $purple;
+            text-align: center;
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+            border: 1px solid $purple;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            flex-direction: column;
+    
+            .form-design-heading{
+                color:$purple;
+            }
+    
+            .Fieldtext{
+                
+                margin-top: 15px;
+                padding:10px;
+                width: 70%;
+                background: transparent;
+                border :none;
+                font-size: $font-size-light;
+                color:$purple;
+                
+                
+            }
+            .Fieldtext:focus-visible{
+                width: 70%;
+                background: transparent;
+                border :none;
+                outline:none;
+                color:$purple;
+                border-bottom: 2px solid $purple;
+            }
+
+            // .Fieldtext:invalid[focused="true"] ~ span{
+            //     display: block;
+            // };
+            // .Fieldradio{
+            //     display: flex;
+            //     margin-top: 15px;
+            //     width: 70%;
+            //     flex-direction: column;
+            //     align-items: flex-start;
+                
+            // }
+    
+            // .Fieldradio:hover{
+            //     border:solid $purple;
+            //     border-radius: 2px ;
+            // }
+    
+            .form-button{
+                margin: 5px 0px 5px 0px;
+    
+                width: 65%;
+                height: 50px;
+                background-color:$purple;
+                // background-image: linear-gradient(180deg, #D9AFD9 0%, #97D9E1 100%);
+                border:$purple 5px;
+                border-radius:  12px;
+                opacity: 0.7;
+                color: $smoke;
+                transition: width 1.7s;
+                font-size: 1.13rem;
+                font-weight: $font-weight-big;
+                
+            }
+    
+            .form-button:hover, .form-button:focus{
+                opacity: 1;
+                width: 70%;
+            }
+
+            
+
+            
+        }
+        
+    }
+}
+
+span{
+    font-size: 12px;
+    padding: 3px;
+    color:red;
+    display:none;
+}
+
+// input:invalid ~ span{
+//     display: block;
+// }
+
+input:invalid[focused="true"] ~ span{
+    display:block;
+}

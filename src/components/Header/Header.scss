@@ -1,0 +1,37 @@
+@import '../../scss/index.scss';
+
+.header{
+    background-color: $black;
+    color:$white;
+    height:50px;
+    width: 100vw;
+    font-size: $font-size-big;
+    font-weight: $font-weight-big;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .header-list{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        
+    }
+
+}
+
+@media only screen and (min-width:0px) and (max-width:768px){
+
+    .header{
+        
+        .header-list{
+            
+            padding:10%;
+            width:100vw;
+            justify-content: space-between;
+        }
+    }
+    
+}

@@ -1,0 +1,15 @@
+@import './scss/index.scss';
+
+a{
+  @include link(white);
+  font-weight: $font-weight-big;
+  font-size: $font-size-big;
+}
+
+@media only screen and (min-width: 0px) and (max-width:768px){
+  a{
+    @include link($white);
+    font-size:1.25rem;
+    font-weight: 600; 
+  } 
+}

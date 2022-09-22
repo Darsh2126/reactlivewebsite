@@ -1,0 +1,10 @@
+@import '../../scss/index.scss';
+
+.home-container{
+    width: 100vw;
+    height: 100vh;
+    display: $smoke;
+    color:$purple;
+    font-weight: $font-weight-big;
+    font-size: $font-size-big;
+}
