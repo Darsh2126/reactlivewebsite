@@ -91,10 +91,6 @@
                 opacity: 1;
                 width: 70%;
             }
-
-            
-
-            
         }
         
     }
@@ -104,13 +100,27 @@ span{
     font-size: 12px;
     padding: 3px;
     color:red;
-    display:none;
 }
 
-// input:invalid ~ span{
-//     display: block;
-// }
+@media  screen and (max-width: 768px) and (min-width:0px) {
 
-input:invalid[focused="true"] ~ span{
-    display:block;
+    .main-form-div{
+        .forms{
+            .form-design{
+                width: 320px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .main-form-div{
+        .forms{
+            .form-design{
+                width: 720px;
+                height: 70vh;
+            }
+        }
+    }
 }

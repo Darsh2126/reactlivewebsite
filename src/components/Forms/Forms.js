@@ -1,76 +1,42 @@
 import './Forms.scss';
 import {useState} from 'react';
-import FormInput from './FormInput';
+import Validations from './Validation';
+
 
 const Forms = () => {
 
-  const [values, setValues] = useState({
+  const initialState ={
+  
     username:"",
     email:"",
     phoneNumber:"",
     password:"",
     confirmPassword:""
-  })
-
-  const inputs = [
-    {
-      id:1,
-      name:"username",
-      type:"text",
-      placeholder:"Username",
-      errorMessage:"Username has atleast 3 character",
-      required:true,
-      pattern:"^[A-Za-z0-9]{3,20}$"
-      
-    },
-    {
-      id:2,
-      name:"email",
-      type:"email",
-      placeholder:"Email",
-      errorMessage:"Enter Valid email address",
-      required:true
-      
-    },
-    {
-      id:3,
-      name:"phoneNumber",
-      type:"number",
-      placeholder:"Phone Number",
-      errorMessage:"Phone Number has 10 numbers only",
-      required:true,
-      pattern:"^\d{10}$"
-      
-    },
-    {
-      id:4,
-      name:"password",
-      type:"password",
-      placeholder:"Password",
-      errorMessage:"Password contain atleast 1 uppercase, 1 lowercase and 1 special character ",
-      required:true,
-      pattern:"(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!=])(?=.{8,}).*$"
-      
-    },
-    {
-      id:5,
-      name:"confirmPassword",
-      type:"password", 
-      placeholder:"Confirm Password",
-      errorMessage:"Password doesn't match",
-      required:true,
-      pattern:values.password
-      
-    }
-  ]
-
-  const handleSubmit = (e) =>{
-    e.preventDefault();
   }
+
+  const [values, setValues] = useState(initialState)
+
+  const [errors, setErrors] = useState({});
   
   const onChange =(e) => {
     setValues({...values,[e.target.name]:e.target.value});
   }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    if(values.username!== '' || values.email!=='' || values.password!== '' || values.confirmPassword!== ''){
+
+      setValues(initialState);
+      setErrors({});
+      alert('Data sent successfully');
+    }
+    else{
+      setErrors(Validations(values));
+    }
+
+  }
+  
 
   // console.log(values);
 
@@ -78,16 +44,44 @@ const Forms = () => {
     <>
     <div className="main-form-div">
       <div className="forms">
-        <form className="form-design" onSubmit={handleSubmit}>
+        <form className="form-design"  onSubmit={handleSubmit}>
         <h1 className="form-design-heading">FORMS</h1>
-        {inputs.map((input)=>(
-        <FormInput
-         key={input.id} 
-         {...input} 
-         value={values[input.name]} 
-         onChange={onChange}
-         />
-        ))}
+        <input 
+        type="text"
+        className='Fieldtext'
+        placeholder='Username'
+        name='username'
+        onChange={onChange}
+        value={values.username}
+        />
+        {errors.username && <span>{errors.username}</span>}      
+        <input 
+        type="email"
+        className='Fieldtext'
+        placeholder='email'
+        name='email'
+        onChange={onChange}
+        value={values.email}
+        />
+        {errors.email && <span>{errors.email}</span>}      
+        <input 
+        type="password"
+        className='Fieldtext'
+        placeholder='password'
+        name='password'
+        onChange={onChange}
+        value={values.password}
+        />
+        {errors.password && <span>{errors.password}</span>}      
+        <input 
+        type="password"
+        className='Fieldtext'
+        placeholder='Confirm Password'
+        name='confirmPassword'
+        onChange={onChange}
+        value={values.confirmPassword}
+        />
+        {errors.confirmPassword && <span>{errors.confirmPassword}</span>}      
         <button className="form-button">SUBMIT</button>
         </form>
       </div>     
